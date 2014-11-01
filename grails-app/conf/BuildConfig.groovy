@@ -55,8 +55,6 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-	compile ":rendering:1.0.0"
-	
         // plugins for the build system only
         build ":tomcat:7.0.55"
 
