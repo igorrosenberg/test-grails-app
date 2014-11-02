@@ -8,18 +8,13 @@ grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 grails.project.fork = [
-    // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
-    //  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
-
-    // configure settings for the test-app JVM, uses the daemon by default
-    test: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
-    // configure settings for the run-app JVM
-    run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
-    // configure settings for the run-war JVM
-    war: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
-    // configure settings for the Console UI JVM
-    console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
+    test: false , 
+    run: false , 
+    war: false , 
+    console: false , 
 ]
+grails.reload.enabled = true
+grails.plugin.location.'uml-class-diagram'="../grails-plugin-class-domain-uml"
 
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
@@ -40,18 +35,11 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
-        // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
     }
 
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.29'
-        // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
-	runtime 'org.springframework:spring-test:4.0.6.RELEASE'
+        runtime 'org.springframework:spring-test:4.0.6.RELEASE'
     }
 
     plugins {
